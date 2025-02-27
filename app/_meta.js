@@ -1,6 +1,6 @@
 export default {
-    index: "Beranda",
-    html: 'HTML',
-    css: 'Cascading Style Sheet (CSS)',
-    javascript: 'JavaScript'
+    index: { type: "page" },
+    docs: { title: "Dokumentasi", type: "page" },
+    about: { type: "page" },
+    contact: { type: "page" },
 };
