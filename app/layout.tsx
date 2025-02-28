@@ -1,8 +1,9 @@
 import { Metadata } from "next";
-import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import { getPageMap } from "nextra/page-map";
-import "nextra-theme-docs/style.css";
 import { Head } from "nextra/components";
+import { GitHubIcon } from "nextra/icons";
+import { getPageMap } from "nextra/page-map";
+import { Footer, Layout, Navbar } from "nextra-theme-docs";
+import "nextra-theme-docs/style.css";
 
 export const metadata: Metadata = {
     applicationName: 'Naladipa Docs',
@@ -22,9 +23,11 @@ export const metadata: Metadata = {
     },
 }
 
-const navbar = (
-    <Navbar logo={<b>Naladipa Docs</b>} />
-);
+const navbar = <Navbar
+    logo={<b>Naladipa</b>}
+    projectLink="https://github.com/fendypurnomo/documentation"
+    projectIcon={<GitHubIcon height="24" />} />;
+
 const footer = <Footer>MIT {new Date().getFullYear()} © Fendy Purnomo.</Footer>;
 
 export default async function RootLayout({children}: {children: React.ReactNode}) {
@@ -37,7 +40,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
             <body>
                 <Layout
                     navbar={navbar}
-                    sidebar={{autoCollapse: true}}
+                    sidebar={{autoCollapse: true, defaultMenuCollapseLevel: 1}}
                     pageMap={await getPageMap()}
                     docsRepositoryBase="https://github.com/fendypurnomo/documentation"
                     footer={footer}>
