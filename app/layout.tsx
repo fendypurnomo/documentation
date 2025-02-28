@@ -37,8 +37,9 @@ export default async function RootLayout({children}: {children: React.ReactNode}
             <body>
                 <Layout
                     navbar={navbar}
+                    sidebar={{autoCollapse: true}}
                     pageMap={await getPageMap()}
-                    docsRepositoryBase="https://github.com/fendypurnomo/documentation/tree/main/docs"
+                    docsRepositoryBase="https://github.com/fendypurnomo/documentation"
                     footer={footer}>
                     {children}
                 </Layout>
